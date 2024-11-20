@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management API – Spring Boot</title>
+</head>
+<body>
+    <h1>Library Management API – Spring Boot</h1>
+    <p>In this challenge, you are tasked with building a REST API service for managing a library using Spring Boot. The API should enable CRUD (Create, Read, Update, Delete) operations for books in the library. You will need to implement functionality to add, update, retrieve, and delete book information. The team has provided detailed requirements for the API endpoints, including request formats, response codes, and query structures.</p>
+    
+    <h2>Book Attributes:</h2>
+    <ul>
+        <li>id: the unique ID of the book [int]</li>
+        <li>ISBN: The unique International Standard Book Number of the book [String]</li>
+        <li>Title: The title of the book [String]</li>
+        <li>Author: The author(s) of the book [String]</li>
+        <li>Description: A brief description of the book [String]</li>
+        <li>Genre: The genre or category of the book [String]</li>
+        <li>PublicationYear: The year the book was published [int]</li>
+        <li>CopiesAvailable: The number of copies of the book available in the library [int]</li>
+        <li>Publisher: The publisher of the book [String]</li>
+        <li>CoverImageUrl: The URL of the book's cover image [String]</li>
+    </ul>
+
+    <h2>Sample Book JSON:</h2>
+    <pre>
+{
+  "ISBN": "9780061120084",
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "description": "A novel set in the American South during the 1930s, focusing on the trial of a black man accused of raping a white woman.",
+  "genre": "Fiction",
+  "publicationYear": 1960,
+  "copiesAvailable": 5,
+  "publisher": "J. B. Lippincott & Co.",
+  "coverImageUrl": "https://via.placeholder.com/150"
+}
+    </pre>
+
+    <h2>API Endpoints:</h2>
+    <ol>
+        <li>
+            <h3>Adding a new book:</h3>
+            <ul>
+                <li>Endpoint: <code>POST /book/add</code></li>
+                <li>Request Body: JSON object containing book details</li>
+                <li>Response Code: 201 if successful, 400 if data validation fails</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Updating book information:</h3>
+            <ul>
+                <li>Endpoint: <code>PUT /book/{id}</code></li>
+                <li>Request Body: JSON object containing updated book details</li>
+                <li>Response Code: 200 if successful, 400 if ID validation fails</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Retrieving all books:</h3>
+            <ul>
+                <li>Endpoint: <code>GET /book/get</code></li>
+                <li>Response Code: 200 if successful, 400 if no books exist</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Deleting a book by ID:</h3>
+            <ul>
+                <li>Endpoint: <code>DELETE /book/{id}</code></li>
+                <li>Response Code: 200 if successful, 400 if ID validation fails</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Instructions:</h2>
+    <ul>
+        <li>Run the application using <code>mvn spring-boot:run</code>.</li>
+        <li>Test the application using <code>mvn clean test</code>.</li>
+        <li>If encountering a "port already in use" error, run <code>fuser -k 8080/tcp</code> in the terminal or change the port in <code>application.properties</code>.</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,5 @@
+com\example\library\controller\BookController.class
+com\example\library\model\Book.class
+com\example\library\repository\BookRepository.class
+com\example\library\service\BookService.class
+com\example\library\LibraryApplication.class
